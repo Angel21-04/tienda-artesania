@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;700&display=swap');
+/*  Estilo de las letras usadas*/
+.fonth2_contenido{
+    font-family: 'Poppins', sans-serif;
+    font-weight:  bold;
+    font-size: 30px;
+}
+
+.fonta_header{
+    font-family: 'Poppins', sans-serif;
+    font-weight:  500;
+    font-size: 14px;
+}
+
+.fontp_contenido{
+    font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
+    font-size: 18px;
+}
+
+.fonth2_widget{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    /* background-color: red; */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.fonth2_widgetcaja{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    /* background-color: red; */
+    text-align: justify;
+    /* word-wrap: break-word; */
+    /* overflow-wrap: break-word; */
+}
+
+.widget_parrafo{
+    font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
+    font-size: 15px;
+    text-align: justify;
+    /* word-wrap: break-word; */
+    /* overflow-wrap: break-word; */
+}
+
+.font_articulo{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+
+body {
+    background-color: #EAEDED;
+    /* background-color: red; */
+    /* background-image: repeating-linear-gradient(-45deg,
+    #ffffff 0px,
+    #ffffff 20px,
+    #b1e0ff 20PX,
+    #b1e0ff 40px); */
+}
+
+
+.contenedor {
+    /* width: 90%; */
+    width: 100%;
+    aspect-ratio: 16/9;
+    max-width: 1200px;
+    margin: 30px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas:    "header    header    header"
+                            "contenido contenido sidebar"
+                            "widget_productos widget_productos widget_productos"
+                            "widget_beneficios widget_beneficios widget_beneficios"
+                            "footer footer footer";
+
+}
+
+.contenedor .header {
+    /* background-color: coral; */
+    color: black;
+    grid-area: header;
+    margin-bottom: 50px;
+}
+
+.contenedor .main-header__container {
+    display: flex;
+    justify-content: space-between;
+}
+.contenedor .main-header__container a{
+    text-decoration: none;
+    color: black;
+}
+
+.contenedor .contenido{
+    /* background-color: coral; */
+    grid-area: contenido;
+    padding: 20px;
+    /* FIXME: Revisar el display, es lo que agregamos*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.contenedor .contenido .texto{
+    text-align: justify;
+}
+
+.contenedor .contenido .texto .titulo1{
+    margin: 0px;
+    text-align: center;
+}
+.contenedor .contenido .texto .titulo2{
+    margin: 0px;
+    text-align: center;
+    text-indent: 40px;
+}
+
+.contenedor .contenido .contenido_button .button_info{
+    padding: 0 10px;
+    background-color: #4F3A3A;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: white;
+    cursor: pointer; 
+    height: 35px;
+    width: 150px;
+}
+
+.contenedor .contenido .contenido_button .button_info:hover{
+background-color: #854747;
+color: whitesmoke;
+}
+
+.contenedor .sidebar{
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    grid-area: sidebar;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+/* TODO: AQUI VAMOS A ESCRIBIR ALGO DE CODIGO*/
+.contenedor .widget_beneficios{
+    /* background-color: blue; */
+    grid-area: widget_beneficios;
+    padding: 20px;
+    /* width: 100px; */
+    /* text-align: center; */
+    /* display: flex; */
+    /* justify-content: center; */
+}
+
+.contenedor .widget_beneficios .widget_caja{
+    /* background-color: indigo; */
+    display: flex;
+    justify-content: space-around;
+}
+
+.caja{
+    /* background-color:greenyellow; */
+    /* border: solid 2px; */
+    width: 250px;
+    height: 200px;
+    text-align: center;
+    /* word-wrap: break-word; */
+    overflow-wrap: break-word;
+}
+
+/* Iconos */
+.fa-dollar-sign{
+    color: green;
+    font-size: 20px;
+}
+
+.fa-credit-card{
+    color: black;
+    font-size: 20px;
+}
+
+.fa-shipping-fast{
+    color: blue;
+    font-size: 20px;
+}
+
+.fa-facebook{
+    color: blue;
+    font-size: 20px;
+}
+
+.fa-twitter{
+    color: #1ca6d6;
+    font-size: 20px;
+}
+
+.fa-instagram{
+    color: #ae31a4;
+    font-size: 20px;
+}
+
+.footer{
+    grid-area: footer;
+    /* background-color: #12103e; */
+    list-style: none;
+    text-decoration: none;
+    text-align: center;
+}
+
+.footer .footer_logo a{
+    text-decoration: none;
+    padding: 20px;
+}
+
+.contenedor .widget_productos{
+    /* background-color: blue; */
+    grid-area: widget_productos;
+    /* padding: 20px; */
+}
+.widget_productos .producto_caja{
+    display: flex;
+    justify-content: space-around;
+    align-content: space-between;
+    flex-wrap: wrap;
+    /* gap: 20px; */
+    row-gap: 30px;
+    column-gap: 80px;
+    margin-bottom: 50px;
+    /* border: 2px solid; */
+    /* height: 200px; */
+    /* width: 30px; */
+    /* height: 30px; */
+}
+
+.producto{
+    /* width: 200px; */
+    /* height: 100px; */
+    min-width: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    text-align: center;
+    padding: 30px;
+    /* line-height: 0; */
+    /* overflow: hidden; */
+    /* margin-bottom: 50px; */
+    margin-right: 20px;
+}
+
+.img_producto{
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+    /* line-height: 0; */
+    width: 160px;
+    height: 200px;
+    object-fit: cover;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.producto_precio{
+    color: #FF4E00;
+    font-weight: bold;
+    display: block;
+    padding: 5px;
+}
+
+.producto_agregar:hover{
+    color: #FF4E00;
+}
+
+.input_agregar{
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    color: #333;
+}
