@@ -6,30 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda de artesanías</title>
-    <link rel="stylesheet" href="../src/css/style.css?version=0.0.3">
+    <link rel="stylesheet" href="../src/css/style.css?version=0.0.2">
 </head>
 
 <body>
     <div class="contenedor">
-
         <header class="header">
             <div class="main-header__container">
-                <span class="fonta_header">Artesanías</span>
-                <span>
-                    <a href="#" class="menu_link fonta_header">Inicio |</a>
-                    <a href="#" class="menu_link fonta_header">Tiendas |</a>
-                    <!-- FIXME: En iniciar sesión utilizaremos un input, ver código linea 69 de ventana-principal del proyecto comercio-->
-                    <a href="#" class="menu_link fonta_header"><i class="fas fa-user">  </i>  Iniciar sesión |</a>
-                    <a href="#" class="menu_link fonta_header">Mi carrito <i class="fas fa-shopping-cart"></i> </a>
-                </span>
+                <div class="logo">
+                    <span class="header_fonta">Artesanías</span>
+                </div>
+                <!-- <div class="menu">
+                    <nav>
+                        <ul class="menuNav">
+                            <li>
+                                <a>Artesanias</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div> -->
+                <div class="menu">
+                    <nav>
+                        <ul class="menuNav">
+                            <li>
+                                <a href="#" class="header_fonta">Inicio</a>
+                            </li>
+                            <li>
+                                <a href="#" class="header_fonta">Tiendas</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-user">
+                                    <input id="btn-abrir-popup" type="submit" class=" header_fonta" value="Iniciar sesion">
+                                </i>
+                            </li>
+                            <li>
+                                <a href="#" class="header_fonta">Mi carrito<i class="fas fa-shopping-cart"></i></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </header>
 
         <main class="contenido">
             <div class="texto">
-                <h2 class="titulo1 fonth2_contenido">Encuentra las mejores</h2>
-                <h2 class="titulo2 fonth2_contenido">artesanias de Acapulco</h2>
-                <p class="fontp_contenido">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure facere corporis est accusamus mollitia eum aut dolorem nihil velit, sapiente sunt at, explicabo expedita, praesentium fuga quidem quibusdam rem! Voluptatem.</p>
+                <h2 class="titulo1 contenido_fonth2">Encuentra las mejores</h2>
+                <h2 class="titulo2 contenido_fonth2">artesanias de Acapulco</h2>
+                <p class="contenido_fontp">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure facere corporis est accusamus mollitia eum aut dolorem nihil velit, sapiente sunt at, explicabo expedita, praesentium fuga quidem quibusdam rem! Voluptatem.</p>
             </div>
             <div class="contenido_button">
                 <button class="button_info">Más información</button>
@@ -41,7 +64,7 @@
         </div>
 
         <div class="widget_productos">
-            <h2 class="fonth2_widget">Algunos productos que podrían interesarte</h2>
+            <h2 class="widget_fonth2">Algunos productos que podrían interesarte</h2>
             <div class="producto_caja">
                 <div class="producto">
                     <img src="../src/assets/img/artesania2.svg" class="img_producto" alt="">
@@ -110,11 +133,10 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
         <div class="widget_beneficios">
-            <h2 class="fonth2_widget">Beneficios por comprar en nuestra tienda</h2>
+            <h2 class="widget_fonth2">Beneficios por comprar en nuestra tienda</h2>
             <div class="widget_caja">
                 <div class="caja">
                     <h2 class="fonth2_widgetcaja"><i class="fas fa-dollar-sign"></i> Compras rápidas y fáciles</h2>
@@ -134,6 +156,84 @@
             </div>
         </div>
 
+        <!-- TODO: AQUI VAMOS A ESCRIBIR ALGO DE CODIGO-->
+        <div class="overlay" id="overlay">
+            <div class="popup" id="popup">
+                <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                <!-- FIXME: active lo reemplazamos por activo para la animación. Esto parte es nueva -->
+                <div class="contenedor-formularios">
+                    <!-- Links de los formularios -->
+                    <ul class="contenedor-tabs">
+                        <li class="tab tab-segunda activo">
+                            <a href="#iniciar-sesion">Iniciar sesión</a>
+                        </li>
+                        <li class="tab tab-primera">
+                            <a href="#registrarse">Crea cuenta</a>
+                        </li>
+                    </ul>
+                    <!-- Contenido del formulario -->
+                    <div class="contenido-tab">
+                        <div id="iniciar-sesion">
+                            <h3>Iniciar sesión</h3>
+                            <form action="login.php" method="POST">
+                                <div class="contenedor-inputs">
+                                    <input class="txtinput" type="email" placeholder="Correo electrónico" name="txtcorreo">
+                                    <input class="txtinput" type="password" placeholder="Contraseña" name="txtpassword">
+                                </div>
+                                <input type="submit" class="btn-submit" value="Iniciar sesion" name="btningresar">
+                            </form>
+                        </div>
+                        <!-- Registrarse -->
+                        <div id="registrarse">
+                            <h3>Completa tus datos </h3>
+                            <form action="#" method="post">
+                                <div class="fila-arriba">
+                                    <div class="contenedor-input">
+                                        <label>
+                                            Nombre <span class="req">*</span>
+                                        </label>
+                                        <input class="txtinput" type="text" required >
+                                    </div>
+                                    <div class="contenedor-input">
+                                        <label>
+                                            Apellido <span class="req">*</span>
+                                        </label>
+                                        <input class="txtinput" type="text" required>
+                                    </div>
+                                </div>
+                                <div class="contenedor-input">
+                                    <label>
+                                        Usuario <span class="req">*</span>
+                                    </label>
+                                    <input class="txtinput" type="text" required>
+                                </div>
+                                <div class="contenedor-input">
+                                        <label>
+                                            Email <span class="req">*</span>
+                                        </label>
+                                    <input class="txtinput" type="email" required>
+                                </div>
+                    
+                                <div class="contenedor-input">
+                                    <label>
+                                        Contraseña <span class="req">*</span>
+                                    </label>
+                                    <input class="txtinput" type="password" required>
+                                </div>
+                                <div class="contenedor-input">
+                                    <label>
+                                        Repetir Contraseña <span class="req">*</span>
+                                    </label>
+                                    <input class="txtinput" type="password" required>
+                                </div>
+                                <input type="submit" class="button_registrar button-block" value="Registrarse">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <footer class="footer">
             <span>
                 <div class="footer_logo">
@@ -146,6 +246,9 @@
     </div>
 
     <script src="https://kit.fontawesome.com/80fd6a5411.js "></script>
+    <script src="../src/javascript/jquery-3.5.1.min.js"></script>
+    <script src="../src/javascript/main.js" ></script>
+    <script src="../src/javascript/popup.js"></script>
 </body>
 
 </html>
