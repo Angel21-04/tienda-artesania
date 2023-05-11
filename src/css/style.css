@@ -2,14 +2,13 @@
 /*  Estilo de las letras usadas*/
 
 .header__a--fuente{
-    font-family: 'Poppins', sans-serif;
-    font-weight:  500;
-    font-size: 14px;
-    /* FIXME: Verificar este boton*/
+    font-weight:  bold;
+    font-size: 16px;
+    font-family: sans-serif;
     border: none;
     cursor: pointer;
-    padding: 0;
     line-height: 34px;
+    background-color: #EAEDED;
 }
 
 .contenido__h2--fuente{
@@ -100,26 +99,30 @@ a{
                             "footer    footer    footer";
 }
 
-header {
-    color: black;
+.menu {
     grid-area: header;
-    margin-bottom: 50px;
     display: flex;
+    padding: 16px;
     justify-content: space-between;
     align-items: center;
 }
 
-.menu__lista{
-    list-style: none;
-    letter-spacing: -0.5;
-    display: flex;
-    align-items: center;
+.menu-toggle {
+    display: none;
 }
 
-.menu__lista li{
-    display: block;
+.menu__lista {
+    list-style: none;
+    display: flex;
+    letter-spacing: -0.5;
+}
+
+.menu-link a{
+    text-decoration: none;
+}
+
+.menu-link {
     padding-left: 10px;
-    text-align: center;
     line-height: 34px;
 }
 
@@ -180,11 +183,10 @@ header {
 
 .widget-productos .producto-caja{
     display: flex;
-    justify-content: space-around;
-    align-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     row-gap: 30px;
-    column-gap: 80px;
+    column-gap: 40px;
     margin-bottom: 50px;
 }
 
@@ -210,7 +212,8 @@ header {
     margin-left: auto;
     margin-bottom: 10px;
     width: 160px;
-    height: 200px;
+    /* height: 200px; */
+    height: 150px;
     object-fit: cover;
     background-color: white;
     border-radius: 10px;
@@ -231,8 +234,6 @@ header {
     color: #fff;
 }
 
-
-/* TODO: AQUI VAMOS A ESCRIBIR ALGO DE CODIGO*/
 .widget-beneficios{
     padding: 20px;
 }
@@ -311,4 +312,144 @@ header {
 .fa-shopping-cart{
     color: black;
     font-size: 20px;
+}
+
+@media screen and (max-width: 460px){
+    
+    .footer .footer_logo{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer .footer_logo a{
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 766px){
+
+    body {
+        /* Se le indica al "body" que tenga una distancia de "6em" con el viemport */
+        padding-top: 2em;
+    }
+
+    .header__a--fuente{
+        background-color: white;
+    }
+
+    .menu-logo-toggle{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-items,
+    .menu {
+        display: block;
+        flex-direction: column;
+    }
+
+    .menu-items {
+        display: none;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .menu__lista{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-link {
+        padding-right: 0px;
+    }
+
+    .menu-ToggleShow {
+        display: block;
+    }
+
+    .menu-toggle {
+        align-self: flex-end;
+        display: initial;
+        cursor: pointer;
+        padding: 5px 10px;
+        border: #BDBDBD solid 1px;
+        border-radius: 5px;
+    }
+
+    .fa-bars{
+        font-size: 20px;
+    }
+
+    .menu-toggle:hover{
+        transition: all 5s ease-out;
+        border: black solid 1px;
+    }
+
+    .sticky {
+        position: fixed;
+        top: 0;
+        font-weight: 500;
+        width: 100%;
+        z-index: 100;
+        padding: .5rem;
+        background-color: white;
+        left: 0;
+    }
+
+    .contenido{
+        margin-bottom: 0px;
+    }
+
+    .contenido__mas-informacion--texto{
+        width: 100%;
+    }
+
+    .sidebar{
+        width: 100%;
+        margin: 0;
+    }
+
+    .contenido__mas-informacion{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    .contenido__p--fuente{
+        width: 100%;
+    }
+
+    .producto{
+        margin: 0;
+    }
+
+    .contenido__mas-informacion--texto .titulo2{
+        text-indent: 0px;
+    }
+}
+
+@media screen and (min-width: 1209px){
+    .widget-productos .producto-caja{
+        column-gap: 100px;
+    }
+}
+
+@media screen and (min-width: 1409px){
+    .widget-productos .producto-caja{
+        justify-content: flex-start;
+        column-gap: 60px;
+    }
+
+    .producto__img{
+        /* width: 160px; */
+        height: 200px;
+    }
+}
+
+@media screen and (min-width: 1680px){
+    .widget-productos .producto-caja{
+        column-gap: 80px;
+    }
 }
