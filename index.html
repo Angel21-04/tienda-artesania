@@ -11,22 +11,29 @@
 </head>
 
 <body class="contenedor">
-    <header>
-        <span class="header__a--fuente">Artesanías</span>
-        <nav>
+    <header class="menu sticky">
+        <div class="menu-logo-toggle">
+            <div class="menu-link">
+                <span class="header__a--fuente">Artesanías</span>
+            </div>
+            <div class="menu-link menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <nav class="menu-items">
             <ul class="menu__lista">
-                <li>
+                <li class="menu-link">
                     <a href="index.html" class="header__a--fuente">Inicio</a>
                 </li>
-                <li>
+                <li class="menu-link">
                     <a href="#" class="header__a--fuente">Tiendas</a>
                 </li>
-                <li>
+                <li class="menu-link">
                     <i class="fas fa-user">
                         <input id="btn-abrir-popup" type="submit" class="header__a--fuente" value="Iniciar sesion">
                     </i>
                 </li>
-                <li>
+                <li class="menu-link">
                     <i class="fas fa-shopping-cart">
                         <a href="#" class="header__a--fuente">Mi carrito</a>
                     </i>
@@ -170,7 +177,7 @@
                                 <input class="txtinput" type="email" placeholder="Correo electrónico" name="txtcorreo">
                                 <input class="txtinput" type="password" placeholder="Contraseña" name="txtpassword">
                             </div>
-                            <input type="submit" class="contenedor-inputs" value="Iniciar sesion" name="btningresar">
+                            <input type="submit" class="contenedor-inputs btn-submit" value="Iniciar sesion" name="btningresar">
                         </form>
                     </div>
                     <!-- Registrarse -->
@@ -236,8 +243,9 @@
 
     <script src="https://kit.fontawesome.com/80fd6a5411.js "></script>
     <script src="src/javascript/jquery-3.5.1.min.js"></script>
-    <script src="src/javascript/main.js" ></script>
+    <script src="src/javascript/menu-toggle.js" ></script>
     <script src="src/javascript/popup.js"></script>
+    <script src="src/javascript/main.js" ></script>
 </body>
 
 </html>
