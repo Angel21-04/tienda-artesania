@@ -21,12 +21,10 @@
     visibility: hidden;
 }
 
-
-
-
 /* CUANDO EL OVERLAY TENGA LA CLASE ACTIVE QUE SE MUESTRE TODA LA VENTANA */
 .overlay.active {
     visibility: visible;
+    z-index: 200;
 }
 
 .popup {
@@ -46,7 +44,6 @@
     /* LA VENTANA VA ESTAR A OCULTA */
     opacity: 0;
 }
-
 
 /* PARA EL BOTON DE CERRAR */
 .popup .btn-cerrar-popup {
@@ -70,13 +67,12 @@
     font-weight: 400;
     margin-bottom: 20px;
     /* El opacity es parte de la animación */
-    /* opacity: 0; */
+    opacity: 0;
 }
 
 .popup form .contenedor-inputs {
     /* El opacity es parte de la animación */
-    /* opacity: 0; */
-    color: black;
+    opacity: 0;
 }
 
 .popup form .contenedor-inputs input {
@@ -120,7 +116,7 @@
 
 /* Con la propiedad forwards la animación se queda con sus ultimas propiedades, que en este caso son las del transform to */
 .popup.popup.active h3 {
-    animation: entradaTitulo .8s ease .5s forwards;
+    animation: entradaTitulo 2s ease .5s forwards;
 }
 
 .popup.popup.active .contenedor-inputs {
@@ -129,7 +125,7 @@
 
 /* ANIMACIÓN */
 /* Que la animación vaya de arriba hacia abajo */
-/* @keyframes entradaTitulo {
+@keyframes entradaTitulo {
     from{
         transform: translateY(-25px);
         opacity: 0;
@@ -138,8 +134,18 @@
         transform: translateY(0);
         opacity: 1;
     }
-} */
+}
 
+@keyframes entradaInputs {
+    from{
+        transform: translateY(-25px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
 /* Parte nueva del login . Links de los formularios*/
 .contenedor-tabs{
@@ -184,8 +190,6 @@
     display: none;
 }
 
-
-
 label {
     position: absolute;
     transform: translateY(6px);
@@ -203,12 +207,11 @@ label.req{
     color: #1ab188;
 }
 
-/* label.activo { */
 label.activo {
     transform: translateY(40px);
     left: 2px;
     font-size: 14px;
-    /* opacity: 0; */
+    opacity: 0;
 }
 
 label.activo.req{
@@ -292,12 +295,6 @@ input:focus{
 .button_registrar:hover:focus{
     background: darken(#1ab188,5%);
 }
-
-
-/* .button-block {
-    display: block;
-    width: 100%;
-} */
 
 .forgot {
     margin-top: -20px;
